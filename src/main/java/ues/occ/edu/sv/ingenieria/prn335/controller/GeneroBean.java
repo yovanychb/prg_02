@@ -64,9 +64,9 @@ public class GeneroBean implements Serializable {
     public List<Genero> generosFiltrados(String Generos) {
         List<Genero> Nombre = new ArrayList<>();
         String[] generos = Generos.split(" ");
-        String regexp = "(?!.*(.)\\1)";
+        String regexp = "[^\\w\\s[^aeiouAEIOU]]|(.)\\1";
         for (String genero : generos) {
-            System.out.println(Pattern.matches(regexp, genero));
+            System.out.println(genero + " -> " + Pattern.matches(Pattern.compile(regexp).pattern(), genero));
             if (Pattern.matches(regexp, genero)) {
                 System.out.println(genero);
                 Genero item = new Genero();

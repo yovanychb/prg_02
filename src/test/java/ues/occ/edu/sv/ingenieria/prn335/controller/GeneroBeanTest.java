@@ -50,12 +50,10 @@ public class GeneroBeanTest {
     @Test
     public void generosFiltradosTest() {
         GeneroBean gen = new GeneroBean();
-        List<Genero> lista = gen.generosFiltrados("drama comedia romance acción terror musical horror ficción guerra western\n"
+        List<Genero> lista = gen.generosFiltrados("drama comedia romance acción terror musical horror ficción guerra wester "
                 + "crimen psicológico suspenso noir blanco&negro biográfico");
 
-        for (Genero genero1 : lista) {
-            System.out.println(genero1.getNombre());
-        }
+        
     }
 
 }
